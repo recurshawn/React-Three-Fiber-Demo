@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useFrame } from "react";
 import { useSpring, a } from "@react-spring/three";
 
 //Generic Ship mesh wrapper
@@ -11,7 +11,7 @@ import { useSpring, a } from "@react-spring/three";
       scale: expand ? [1.4, 1.4, 1.4] : [1, 1, 1],
     });
   
-    //useFrame(() => (mesh.current.rotation.y += 0.01));
+    // useFrame(() => (mesh.current.rotation.y += 0.01));
     return (
       <a.mesh
         position={position}

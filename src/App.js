@@ -12,6 +12,9 @@ import Ship from "./components/Ship";
 import LuxuryShip from "./models/LuxuryShip";
 import MedicalFrigate from "./models/MedicalFrigate";
 import CargoFreighter from "./models/CargoFreighter";
+import Lambo from "./models/Lambo";
+
+import Netflix from "./models/Netflix";
 
 function App() {
   return (
@@ -19,16 +22,18 @@ function App() {
       <Canvas
         colorManagement
         orthographic
-        camera={{ position: [-20, 30, -20], zoom: 30 }}
+        camera={{ position: [-60, 40, -40], zoom: 30 }}
       >
         <Suspense fallback={null}>
           {/* Lighting */}
-          <ambientLight intensity={0.4} />
+           <ambientLight intensity={0.3} />
+          <pointLight intensity={0.5} position={[10, 0, 10]} />
+          {/*<pointLight intensity={0.5} position={[10, 0, -10]} /> 
           <pointLight intensity={0.5} position={[-10, 0, 10]} />
-          <pointLight intensity={1.5} position={[0, -10, 0]} />
+          <pointLight intensity={0.5} position={[-10, 0, -10]} /> */}
 
           {/* Ships */}
-          <Ship position={[-15, -3, 10]} name="Luxury Ship">
+          {/* <Ship position={[-15, -3, 10]} name="Luxury Ship">
             <LuxuryShip />
           </Ship>
           <Ship position={[-5, -3, 0]} name="Medical Frigate">
@@ -36,6 +41,9 @@ function App() {
           </Ship>
           <Ship position={[13, -3, 30]} name="Cargo Freighter">
             <CargoFreighter />
+          </Ship> */}
+          <Ship position={[0, 0, 0]} name="Lambo"> 
+            <Netflix />
           </Ship>
         </Suspense>
       </Canvas>
